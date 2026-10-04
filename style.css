@@ -1,0 +1,51 @@
+:root{--bg:#070A1C;--bg2:#0E1330;--ink:#EAF0FF;--mute:#9AA6CC;--cyan:#00E5FF;--gold:#FFC83D;--pink:#FF5C8A;--line:rgba(255,255,255,.12)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:radial-gradient(1100px 600px at 80% -10%,#1b2160 0%,transparent 60%),var(--bg);color:var(--ink);font:400 17px/1.6 Inter,system-ui,sans-serif;min-height:100vh}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+header{padding:28px 0}
+.brand{display:inline-flex;align-items:center;gap:12px;font:700 18px Sora,sans-serif;letter-spacing:.5px;text-decoration:none}
+.brand img{width:38px;height:38px;border-radius:11px}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:center;padding:36px 0 70px}
+h1{font:800 clamp(40px,7vw,68px)/1.04 Sora,sans-serif;letter-spacing:-1.5px}
+.lead{color:var(--mute);font-size:19px;max-width:30em;margin-top:18px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-block;padding:13px 22px;border-radius:999px;font:600 16px Inter,sans-serif;text-decoration:none;border:1px solid var(--line);transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.07)}
+.btn.main{background:linear-gradient(90deg,var(--cyan),#6ee7ff);color:#04202a;border:0}
+.btn.main:hover{background:linear-gradient(90deg,#33ecff,#9bf0ff)}
+/* the memorable thing: a halo with a spark that keeps orbiting */
+.halo{position:relative;width:min(340px,80vw);aspect-ratio:1;margin:0 auto}
+.halo i{position:absolute;inset:0;border-radius:50%;border:3px solid transparent;background:conic-gradient(from 0deg,var(--cyan),var(--pink),var(--gold),var(--cyan)) border-box;-webkit-mask:linear-gradient(#000 0 0) padding-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;filter:drop-shadow(0 0 14px rgba(0,229,255,.55))}
+.halo i:nth-child(2){inset:14%;opacity:.45;filter:none}
+.halo img{position:absolute;inset:27%;width:46%;border-radius:24%;box-shadow:0 0 40px rgba(0,229,255,.35)}
+.halo b{position:absolute;inset:0;animation:spin 7s linear infinite}
+.halo b::after{content:"";position:absolute;top:-7px;left:calc(50% - 7px);width:14px;height:14px;border-radius:50%;background:var(--gold);box-shadow:0 0 18px 6px rgba(255,200,61,.7)}
+@keyframes spin{to{transform:rotate(360deg)}}
+h2{font:700 28px Sora,sans-serif;letter-spacing:-.5px}
+section{padding:10px 0 60px}
+.app{display:grid;grid-template-columns:auto 1fr;gap:24px;padding:28px 0;border-top:1px solid var(--line)}
+.tile{width:84px;height:84px;border-radius:22px;display:grid;place-items:center;font:800 28px Sora,sans-serif;overflow:hidden}
+.tile img{width:100%;height:100%;object-fit:cover}
+.app h3{font:700 22px Sora,sans-serif}
+.app p{color:var(--mute);margin-top:6px;max-width:36em}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tags span{font-size:14px;padding:4px 12px;border-radius:999px;background:rgba(255,255,255,.07)}
+.links{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:16px;font-weight:600}
+.links a{color:var(--cyan);text-underline-offset:4px}
+.status{display:inline-block;margin-left:10px;font:600 13px Inter,sans-serif;padding:3px 10px;border-radius:999px;background:rgba(255,200,61,.16);color:var(--gold);vertical-align:middle}
+footer{border-top:1px solid var(--line);padding:30px 0 50px;color:var(--mute);font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+footer nav{display:flex;flex-wrap:wrap;gap:8px 22px}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-bottom:40px}.halo{order:-1;width:min(240px,70vw)}.app{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.halo b{animation:none}.btn{transition:none}}
+.doc{padding:20px 0 70px}
+.doc h1{font-size:clamp(32px,5vw,46px);margin-bottom:10px}
+.doc .lead{margin-bottom:34px}
+.pol{padding:26px 0;border-top:1px solid var(--line)}
+.pol h2{font-size:22px}
+.pol p{color:var(--mute);margin-top:6px}
+.pol ul{list-style:none;padding:0;margin-top:12px;display:grid;gap:8px}
+.pol a{color:var(--cyan);text-underline-offset:4px;font-weight:600}
